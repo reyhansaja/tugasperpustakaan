@@ -105,9 +105,9 @@ public class Anggota {
         ArrayList<Anggota> ListAnggota = new ArrayList<>();
 
         String sql = "SELECT * FROM anggota WHERE "
-                + " nama LIKE '%" + keyword + "%' "
-                + " OR alamat LIKE '%" + keyword + "%' "
-                + " OR telepon LIKE '%"+ keyword + "%' ";
+                + " nama ILIKE '%" + keyword + "%' "
+                + " OR alamat ILIKE '%" + keyword + "%' "
+                + " OR telepon ILIKE '%"+ keyword + "%' ";
 
         ResultSet rs = DBHelper.selectQuery(sql);
 

@@ -1,27 +1,39 @@
 import backend.*;
 
-public class testbackend {
+public class testbackend
+{
+    public static void main(String[] args)
+    {
+        Kategori novel = new Kategori().getById(6);
+        Kategori scifi = new Kategori().getById(16);
 
-    public static void main(String[] args) {
-        Anggota ang1 = new Anggota("Rahmat Subandi", "Surabaya", "081111111");
-//        Anggota ang2 = new Anggota("Referensi", "Buku referensi ilmiah");
-//        Anggota ang3 = new Anggota("Komik", "Komik anak-anak");
-// test insert
-        ang1.save();
-//        ang2.save();
-//        ang3.save();
-// test update
-//        ang2.setKeterangan("Koleksi buku referensi ilmiah");
-//        ang2.save();
-//// test delete
-//        ang3.delete();
-// test select all
-        for (Anggota ang : new Anggota().getAll()) {
-            System.out.println("Nama: " + ang.getNama() + ", Ket: " + ang.getAlamat() + ", Telp: " + ang.getTelepon());
+        Buku buku1 = new Buku(novel, "Minum Mas", "Inex Media", "Rang Supri");
+        Buku buku2 = new Buku(scifi, "Metode Linier", "Springer", "Alex Baldwin");
+        Buku buku3 = new Buku(novel, "Bintang Terang", "Erlangga", "Max Seowot");
+
+        // test insert
+        buku1.save();
+        buku2.save();
+
+        // test update
+        buku2.setJudul("Aljabar Linier");
+        buku2.save();
+
+        // test delete
+        buku3.delete();
+
+        // test select all
+        for(Buku b : new Buku().getAll())
+        {
+            System.out.println("Kategori : " + b.getKategori().getNama() + 
+                               ", Judul : " + b.getJudul());
         }
-// test search
-//        for (Anggota k : new Anggota().search("ilmiah")) {
-//            System.out.println("Nama: " + k.getNama() + ", Ket: " + k.getKeterangan());
-//        }
+
+        // test search
+        for(Buku b : new Buku().search("Lima"))
+        {
+            System.out.println("Kategori : " + b.getKategori().getNama() + 
+                               ", Judul : " + b.getJudul());
+        }
     }
 }

@@ -138,6 +138,12 @@ public class FrmAnggota extends javax.swing.JFrame {
             }
         });
 
+        txtCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCariActionPerformed(evt);
+            }
+        });
+
         tblAnggota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -280,6 +286,10 @@ public class FrmAnggota extends javax.swing.JFrame {
         txtAlamat.setText(model. getValueAt(row, 2).toString());
         txtNoTelepon.setText(model.getValueAt(row, 3).toString());
     }//GEN-LAST:event_tblAnggotaMouseClicked
+
+    private void txtCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCariActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,6 +21,10 @@ public class Kategori {
 
     }
 
+    public String toString(){
+        return nama;
+    }
+    
     public Kategori(String nama, String keterangan) {
         this.nama = nama;
         this.keterangan = keterangan;
